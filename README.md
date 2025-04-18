@@ -1,34 +1,64 @@
-# Introduction to GitHub
-
-<!-- ![](../../actions/workflows/0-start-exercise.yml/badge.svg) -->
-![](../../actions/workflows/1-create-a-branch.yml/badge.svg)
-![](../../actions/workflows/2-commit-a-file.yml/badge.svg)
-![](../../actions/workflows/3-open-a-pull-request.yml/badge.svg)
-![](../../actions/workflows/4-merge-your-pull-request.yml/badge.svg)
-
-_Get started using GitHub in less than an hour._
-
-## Welcome
-
-People use GitHub to build some of the most advanced technologies in the world. Whether you’re visualizing data or building a new game, there’s a whole community and set of tools on GitHub that can help you do it even better. GitHub Skills’ “Introduction to GitHub” exercise guides you through everything you need to start contributing in less than an hour.
-
-- **Who is this for**: New developers, new GitHub users, and students.
-- **What you'll learn**: We'll introduce repositories, branches, commits, and pull requests.
-- **What you'll build**: We'll make a short Markdown file you can use as your [profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme).
-- **Prerequisites**: None. This exercise is a great introduction for your first day on GitHub.
-- **How long**: This exercise takes less than one hour to complete.
-
-In this exercise, you will:
-
-1. Create a branch
-2. Commit a file
-3. Open a pull request
-4. Merge your pull request
-
-### How to start this exercise
-
-1. Right-click **Copy Exercise** and open the link in a new tab.
-
+client.setSettings({
+  workMap: "R-6", // Target map to work on
+  killTargets: [
+    // Enemy targets with priority
+    { name: "-=(Hydro)=-", priority: 1, ammo: 1, rockets: 1, farmNearPortal: false },
+    { name: "-=(Hyper|Hidro)=-", priority: 2, ammo: 1, rockets: 1, farmNearPortal: false },
+    // More targets...
+  ],
+  collectBoxTypes: [
+    // Box types to collect
+    { type: 3, priority: 10 },
+    { type: 1, priority: 1 },
+  ],
+  minHP: 10, // Minimum health percentage
+  adviceHP: 70, // Advised health percentage
+  kill: {
+    targetEngagedNPC: true, // Whether to target already engaged NPCs
+  },
+  escape: {
+    enabled: true, // Enable escape mechanism
+    delay: 20000, // Delay before escape
+  },
+  config: {
+    switchConfigOnShieldsDown: true, // Switch config when shields are down
+    attacking: 1, // Config for attacking
+    fleeing: 2, // Config for fleeing
+    flying: 2, // Config for flying
+  },
+  enrichment: {
+    lasers: { enabled: true, materialType: 0 },
+    rockets: { enabled: true, materialType: 0 },
+    shields: { enabled: true, materialType: 0, amount: 10, minAmount: 10 },
+    speed: { enabled: true, materialType: 0, amount: 10, minAmount: 10 },
+  },
+  autobuy: {
+    laser: {
+      RLX_1: true,
+      GLX_2: true,
+      BLX_3: true,
+      GLX_2_AS: true,
+      MRS_6X: true,
+    },
+    rockets: {
+      KEP_410: true,
+      NC_30: true,
+      TNC_130: true,
+    },
+    key: {
+      enabled: true,
+      savePLT: 50000, // Amount of PLT to save
+    },
+  },
+  break: {
+    interval: 3600000, // Break interval (1 hour)
+    duration: 300000, // Break duration (5 minutes)
+  },
+  admin: {
+    enabled: true, // Enable admin detection
+    delay: 5, // Delay for admin detection processing
+  },
+});
    <a id="copy-exercise" href="https://github.com/new?template_owner=skills&template_name=introduction-to-github&owner=%40me&name=skills-introduction-to-github&description=Exercise:+Introduction+to+GitHub&visibility=public">
       <img src="https://img.shields.io/badge/📠_Copy_Exercise-008000" height="25pt"/>
    </a>
